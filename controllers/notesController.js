@@ -7,7 +7,8 @@ exports.criarNotes = async (req, res) => {
     // Cria uma nova instância do modelo 'Livro' com os dados recebidos na requisição
     const notes = new Notes({
         Nome_da_Anotacao: req.body.Nome_da_Anotacao,   // Título do livro
-        Data: req.body.Data   // Autor do livro
+        Data: req.body.Data,  // Autor do livro 
+        Anotacao: req.body.Anotacao   // Editora do livro
        
     });
     try {

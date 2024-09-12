@@ -9,7 +9,11 @@ const NotesSchema = new mongoose.Schema({
     Data: {
         type: String,
         required: true
-    }
+    },
+    Anotacao: {
+        type: String,
+        required: true
+    }  // Adicione as outras colunas necessárias para armazenar os dados de anotações.
     
 });
 
