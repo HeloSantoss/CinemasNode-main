@@ -84,11 +84,13 @@ Desenvolver uma aplicação de bloco de notas que permita aos usuários criar, e
 ### 5.2. Recursos Tecnológicos
 - **Ferramentas de Desenvolvimento:** Visual Studio Code, GitHub
 - **Frameworks e Bibliotecas:** React, Node.js, Express, JWT
-- **Banco de Dados:** MongoDB ou MySQL
+- **Banco de Dados:** MongoDB 
 - **Infraestrutura:** Servidor para hospedagem da aplicação
 
 ### 5.3. Recursos Financeiros
 - **Orçamento para Ferramentas e Licenças:** $2.000
 - **Custos de Hospedagem e Domínio:** $500
 
+### Link do Figma: 
 
+https://www.figma.com/design/HG77XdsSi6GPvjh56TPNuc/Untitled?node-id=0-1&t=RnYDRP3y6PtrLo0q-1
