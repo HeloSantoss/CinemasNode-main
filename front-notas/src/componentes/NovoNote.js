@@ -3,7 +3,7 @@ import axios from 'axios'; // Importa a biblioteca axios para fazer requisiçõe
 import { useNavigate } from 'react-router-dom'; // Importa o hook useNavigate para navegação programática
 
 
-function NovoNotes() {
+function NovoNote() {
     // Define os estados para os campos do formulário. Inicialmente, todos os valores são strings vazias.
     const [Nome_da_Anotacao, setNome_da_Anotacao] = useState('');
     const [Data, setData] = useState('');
@@ -16,22 +16,21 @@ function NovoNotes() {
 
 
     // Função para adicionar um novo livro
-    const adicionarNote = (e) => {
+    const criarNotes = (e) => {
         e.preventDefault(); // Previne o comportamento padrão do formulário, que é recarregar a página
 
 
         // Faz uma requisição POST para a API para adicionar um novo livro com os dados do formulário
-        axios.post('http://localhost:3000/notes', {Nome_da_Anotacao, Data, Anotacao })
+        axios.post('http://localhost:5000/notes/novo', {Nome_da_Anotacao, Data, Anotacao })
             .then(() => {
                 // Se a requisição for bem-sucedida, navega para a página principal ('/')
-                navigate('/');
-            })
-            .catch(error => console.error('Erro ao adicionar notes:', error)); // Lida com qualquer erro que ocorra durante a requisição
+                navigate('/'); 
+            }).catch(error => console.error('Erro ao adicionar notes:', error)); // Lida com qualquer erro que ocorra durante a requisição
     };
 
 
     return (
-        <form onSubmit={adicionarNote}> {/* Define que a função adicionarLivro será chamada quando o formulário for enviado */}
+        <form onSubmit={criarNotes}> {/* Define que a função adicionarLivro será chamada quando o formulário for enviado */}
             <h1>Novo notes</h1> {/* Título da página */}
            
             {/* Campo para o título do livro */}
@@ -66,4 +65,4 @@ function NovoNotes() {
 }
 
 
-export default NovoNotes; // Exporta o componente NovoLivro para que possa ser usado em outras partes da aplicação
+export default NovoNote; // Exporta o componente NovoLivro para que possa ser usado em outras partes da aplicação

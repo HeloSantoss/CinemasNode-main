@@ -21,7 +21,7 @@ function EditarNotes() {
     // useEffect é usado para buscar os dados do livro quando o componente é montado ou o 'id' muda.
     useEffect(() => {
         // Faz uma requisição GET para a API para buscar os detalhes do livro com o 'id' especificado.
-        axios.get(`http://localhost:3000/note/${id}`)
+        axios.get(`http://localhost:5000/note/${id}`)
             .then(response => {
                 // Atualiza os estados com os dados do livro obtidos da API.
                 setNome_da_Anotacao(response.data.Nome_da_Anotacao);
@@ -34,19 +34,19 @@ function EditarNotes() {
 
 
     // Função para atualizar o livro
-    const atualizarNote = (e) => {
+    const atualizarNotes = (e) => {
         e.preventDefault(); // Previne o comportamento padrão do formulário, que é recarregar a página
 
 
         // Faz uma requisição PUT para a API para atualizar o livro com o 'id' especificado com os dados do formulário.
-        axios.put(`http://localhost:3000/notes/${id}`, {Nome_da_Anotacao, Data, Anotacao })
+        axios.put(`http://localhost:5000/notes/${id}`, {Nome_da_Anotacao, Data, Anotacao })
             .then(() => navigate('/')) // Se a requisição for bem-sucedida, navega para a página principal ('/')
             .catch(error => console.error('Erro ao atualizar livro:', error)); // Lida com qualquer erro que ocorra durante a requisição
     };
 
 
     return (
-        <form onSubmit={atualizarNote}> {/* Define que a função atualizarLivro será chamada quando o formulário for enviado */}
+        <form onSubmit={atualizarNotes}> {/* Define que a função atualizarLivro será chamada quando o formulário for enviado */}
             <h1>Editar Livro</h1> {/* Título da página */}
            
             {/* Campo para o título do livro */}

@@ -2,9 +2,9 @@ import React from 'react'; // Importa a biblioteca React, que é necessária par
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importa componentes do React Router para gerenciar rotas dentro da aplicação.
 
 
-import ListaNote from './components/ListaNote'; // Importa o componente que lista todos os livros.
-import NovoNote from './components/NovoNote'; // Importa o componente que permite adicionar um novo livro.
-import EditarNote from './components/EditarNote'; // Importa o componente que permite editar um livro existente.
+import ListaNote from './componentes/ListaNote'; // Importa o componente que lista todos os livros.
+import NovoNote from './componentes/NovoNote'; // Importa o componente que permite adicionar um novo livro.
+import EditarNote from './componentes/EditarNote'; // Importa o componente que permite editar um livro existente.
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                     <Route path="/" element={<ListaNote />} />
                    
                     {/* Rota para a página de adição de um novo livro */}
-                    <Route path="/novo" element={<NovoNote />} />
+                    <Route path="/novo" element={<NovoNote/>} />
                    
                     {/* Rota para a página de edição de um livro existente; o :id é um parâmetro dinâmico que representa o ID do livro a ser editado */}
                     <Route path="/editar/:id" element={<EditarNote />} />
