@@ -9,7 +9,7 @@ router.post('/novo', notesController.criarNotes);            // Criar um novo No
 router.get('/', notesController.listarNotes);           // Listar todos os Notess
 router.put('/:id', notesController.atualizarNotes);    // Atualizar um Notes por ID
 router.delete('/:id', notesController.deletarNotes);     // Deletar um Notes por ID 
-router.get('/notes/:id', notesController.obterDetalhesNote); //Obter Detalhes de uma nota 
+router.get('/:id', notesController.mostrarDetalhes); //Obter Detalhes de uma nota 
 
 
 

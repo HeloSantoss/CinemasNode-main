@@ -30,7 +30,7 @@ function ListarNotes() {
 
     // Função para mostrar os detalhes da nota
     const mostrarDetalhes = (id) => {
-        axios.get(`http://localhost:5000/notes/${id}/detalhes`) // Faz uma requisição GET para a API para obter detalhes da nota
+        axios.get(`http://localhost:5000/notes/${id}`) // Faz uma requisição GET para a API para obter detalhes da nota
             .then(response => {
                 setSelectedNote(response.data); // Atualiza o estado com os detalhes da nota
                 setIsModalOpen(true); // Abre o modal
@@ -70,8 +70,9 @@ function ListarNotes() {
              {/* Modal para exibir detalhes */}
              {isModalOpen && selectedNote && (
                 <div id="details-modal" style={{ display: 'block', border: '1px solid black', padding: '20px', position: 'fixed', top: '20%', left: '30%', backgroundColor: 'white', zIndex: 1000 }}>
-                    <h2>{selectedNote.Nome_da_Anotacao}</h2>
-                    <p>{selectedNote.Anotacao}</p>
+                    <h2>{selectedNote.Nome_da_Anotacao}</h2> 
+                    <p>{selectedNote.Data}</p>
+                    <p>{selectedNote.Anotacao}</p> 
                     <button onClick={fecharModal}>Fechar</button>
                 </div>
             )} 

@@ -94,10 +94,10 @@ exports.deletarNotes = async (req, res) => {
         // Em caso de erro, retorna uma mensagem de erro com status 500 (Internal Server Error)
         res.status(500).json({ message: err.message });
     } 
-
+};
 
     // Obter detalhes de uma nota por ID
-exports.obterDetalhesNote = async (req, res) => {
+exports.mostrarDetalhes = async (req, res) => {
     try {
         // Busca a nota pelo ID
         const note = await Notes.findById(req.params.id);
@@ -112,7 +112,7 @@ exports.obterDetalhesNote = async (req, res) => {
         // Em caso de erro, retorna uma mensagem de erro com status 500 (Internal Server Error)
         res.status(500).json({ message: err.message });
     }
-}
+};
 
 
-}; 
+
