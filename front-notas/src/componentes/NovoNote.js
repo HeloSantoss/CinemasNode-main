@@ -31,9 +31,10 @@ function NovoNote() {
 
     return (
         <form onSubmit={criarNotes}> {/* Define que a função adicionarLivro será chamada quando o formulário for enviado */}
-            <h1>Novo notes</h1> {/* Título da página */}
+            <h1>Novo Projeto</h1> {/* Título da página */}
            
             {/* Campo para o título do livro */}
+            <h3>Titulo </h3>
             <input
                 type="text"
                 value={Nome_da_Anotacao}
@@ -43,6 +44,7 @@ function NovoNote() {
             />
            
             {/* Campo para o autor do livro */}
+            <h3>Data</h3>
             <input
                 type="text"
                 value={Data}
@@ -52,6 +54,7 @@ function NovoNote() {
             />
            
             {/* Campo para o ano de publicação do livro */}
+            <h3>Descrição</h3>
             <input
                 type="text"
                 value={Anotacao}
