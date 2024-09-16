@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="style.css">
-    <title>React App</title>
-    <link rel="stylesheet" href="%PUBLIC_URL%/styles.css" /> <!-- Link para o arquivo de estilos -->
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    
-    <div class="part1">
-<!-- Barra de Navegação -->
-<nav class="navbar">
-  <div class="navbar-left">
-    <img src="./img/logo4.png" alt="Logo" class="logo" />
-    <input type="text" placeholder="Buscar..." class="search" />
-  </div>
-  <div class="navbar-right">
-    <img src="https://i.pinimg.com/564x/75/33/18/753318f681281553bca587d13c5d4c85.jpg" alt="Perfil" class="profile-pic" />
-    <button class="hamburger-menu">
-      <span class="hamburger-icon"></span>
-      <span class="hamburger-icon"></span>
-      <span class="hamburger-icon"></span>
-    </button>
-  </div>
-</nav>
-<!-- Novo campo para adicionar imagem do usuário -->
-<div class="user-image-container">
-<img src="https://i.pinimg.com/564x/75/33/18/753318f681281553bca587d13c5d4c85.jpg" alt="Imagem do Usuário" class="user-image" />
-</div>
-<th>
-  <h5>Nome:</h5>
-  <h5>Descrição:</h5>
-</th>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../src/css/ListarNotes.css">
+  <link rel="stylesheet" href="../src/css/EditarNote.css">
+
+
+
+
+  <title>React App</title>
+  <link rel="stylesheet" href="%PUBLIC_URL%/styles.css" /> <!-- Link para o arquivo de estilos -->
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+  <!-- Barra de Navegação -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="./img/logo4.png" alt="Logo" class="logo" />
+      <input type="text" placeholder="Buscar..." class="search" />
     </div>
-    
- <hr>
- <div class="part2">
+    <div class="navbar-right">
+      <img src="https://i.pinimg.com/564x/75/33/18/753318f681281553bca587d13c5d4c85.jpg" alt="Perfil"
+        class="profile-pic" />
+      <button class="hamburger-menu">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Novo campo para adicionar imagem do usuário -->
+  <!-- Novo campo para adicionar imagem do usuário -->
+  <div class="user-image-container">
+    <img src="https://i.pinimg.com/564x/75/33/18/753318f681281553bca587d13c5d4c85.jpg" 
+      class="user-image" id="userImage" />
+  </div>
 
- </div>
+  <!-- Input para selecionar imagem -->
+  <input type="file" id="imageInput" accept="image/*" /> 
 
-    <!-- Div para a aplicação React -->
-    <div id="root"></div>
-    <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
-        <ul class="footer-links">
-          <li><a href="#privacy-policy">Política de Privacidade</a></li>
-          <li><a href="#terms-of-service">Termos de Serviço</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+  <div class="part2">
+    <th>
+      <h5>Nome:</h5>
+      <h5>Descrição:</h5>
+    </th>
+  </div>
+  </div>
+
+  <hr>
+
+
+  <!-- Div para a aplicação React -->
+  <div id="root">
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="#privacy-policy">Política de Privacidade</a></li>
+        <li><a href="#terms-of-service">Termos de Serviço</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </div>
+  </footer>
+</body> 
+
+<script>
+  // Seleciona o input de imagem e a imagem de exibição
+  const imageInput = document.getElementById('imageInput');
+  const userImage = document.getElementById('userImage');
+
+  // Adiciona um listener de eventos para quando a imagem for selecionada
+  imageInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      // Quando o arquivo for lido, exibe a imagem no <img>
+      reader.onload = function(e) {
+        userImage.src = e.target.result;
+      }
+      reader.readAsDataURL(file); // Converte a imagem para base64 e exibe
+    }
+  });
+</script>
+
 </html>

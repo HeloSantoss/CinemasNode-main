@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Importa o React e os hooks useState e useEffect
 import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
 import { Link } from 'react-router-dom'; // Importa o componente Link do react-router-dom para navegação entre páginas
-import '../css/ListarNotes.css'; // Importa o arquivo de estilos da pasta css
+import './css/ListarNotes.css'; // Importa o arquivo de estilos da pasta css 
 
 
 function ListarNotes() {
@@ -44,32 +44,41 @@ function ListarNotes() {
         setIsModalOpen(false); // Fecha o modal
         setSelectedNote(null); // Limpa os detalhes da nota selecionada
     };
+ 
+    return ( 
 
-    return (
-        <div>
-            <h1>Lista de Note</h1>
-            {/* Link para a página de adição de um novo livro */}
-            <Link to="/novo">Lista de Anotações</Link>
-            <ul>
-                {/* Mapeia o array de livros para gerar uma lista de itens */}
-                {note.map(note => (
-                    <li key={note._id}> {/* Cada item da lista tem uma chave única, o _id do note */}
-                        {note.Nome_da_Anotacao} - {note.Data} {/* Exibe o título e o autor do livro */}
-                       
-                        {/* Link para a página de edição do livro */}
-                        <Link to={`/editar/${note._id}`}>Editar</Link>
-                       
-                        {/* Botão para deletar o livro */}
-                        <button onClick={() => deletarNotes(note._id)}>Deletar</button> 
+        <div> 
+        <h1>Lista de Notas</h1>
 
-                           {/* Botão para mostrar detalhes da nota */}
-                        <button onClick={() => mostrarDetalhes(note._id)}>Detalhes</button>
-                    </li>
-                ))}
-            </ul>
-
-             {/* Modal para exibir detalhes */}
-             {isModalOpen && selectedNote && (
+        <div className="table-container">
+            <table className="notes-table">
+                <thead>
+                    <tr>
+                        <th>Nome da Anotação</th>
+                        <th>Data</th>
+                     <th>Editar   Deletar Detalhes         </th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    {/* Mapeia o array de notas para gerar uma lista de linhas na tabela */}
+                    {note.map(note => (
+                        <tr key={note._id}>
+                            <td>{note.Nome_da_Anotacao}</td>
+                            <td>{note.Data}</td>
+                            <td>
+                                {/* Link para a página de edição da nota */}
+                                <Link to={`/editar/${note._id}`} className="button-link">Editar</Link>
+                                {/* Botão para deletar a nota */}
+                                <button onClick={() => deletarNotes(note._id)} className="button-delete">Deletar</button>
+                                {/* Botão para mostrar detalhes da nota */}
+                                <button onClick={() => mostrarDetalhes(note._id)} className="button-details">Detalhes</button>
+                            </td> 
+                        </tr>
+                    ))}
+                </tbody>
+            </table> 
+              {/* Modal para exibir detalhes */}
+              {isModalOpen && selectedNote && (
                 <div id="details-modal" style={{ display: 'block', border: '1px solid black', padding: '20px', position: 'fixed', top: '20%', left: '30%', backgroundColor: 'white', zIndex: 1000 }}>
                     <h2>{selectedNote.Nome_da_Anotacao}</h2> 
                     <p>{selectedNote.Data}</p>
@@ -82,9 +91,15 @@ function ListarNotes() {
              {isModalOpen && (
                 <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 999 }} onClick={fecharModal}></div>
             )}
+        </div>  
+        {/* Link para a página de adição de uma nova nota */}
+        <Link to="/novo" className="add-note-button">Adicionar Nova Nota</Link>
+            
         </div>
     );
 }
+
+
 
 
 export default ListarNotes; 

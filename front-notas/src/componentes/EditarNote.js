@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Importa o React e os hooks useState e useEffect
 import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
 import { useParams, useNavigate } from 'react-router-dom'; // Importa useParams para obter parâmetros da URL e useNavigate para navegação programática
-import '../css/EditarNote.css'; // Importa o arquivo de estilos
+import './css/EditarNote.css'; // Importa o arquivo de estilos
 
 
 function EditarNotes() {
@@ -27,8 +27,8 @@ function EditarNotes() {
                 // Atualiza os estados com os dados do livro obtidos da API.
                 setNome_da_Anotacao(response.data.Nome_da_Anotacao);
                 setData(response.data.Data);
-                setAnotacao(response.data.Anotacao);
-                
+                setAnotacao(response.data.Anotacao); 
+
             })
             .catch(error => console.error('Erro ao buscar o note:', error)); // Lida com erros durante a requisição
     }, [id]); // O efeito será executado sempre que o 'id' mudar
@@ -46,7 +46,9 @@ function EditarNotes() {
     };
 
 
-    return (
+    return ( 
+        <div className="form-container">
+
         <form onSubmit={atualizarNotes}> {/* Define que a função atualizarLivro será chamada quando o formulário for enviado */}
             <h1>Editar Nota</h1> {/* Título da página */}
            
@@ -61,7 +63,7 @@ function EditarNotes() {
            
             {/* Campo para o autor do livro */}
             <input
-                type="text"
+                type="date"
                 value={Data}
                 onChange={e => setData(e.target.value)} // Atualiza o estado 'autor' quando o valor do campo muda
                 placeholder="Data"
@@ -78,7 +80,8 @@ function EditarNotes() {
             />
             {/* Botão para enviar o formulário */}
             <button type="submit">Atualizar</button>
-        </form>
+        </form> 
+        </div>
     );
 }
 

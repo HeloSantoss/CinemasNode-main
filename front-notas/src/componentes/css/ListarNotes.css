@@ -1,0 +1,83 @@
+/* ListarNotes.css */
+
+.table-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    overflow-x: auto;
+}
+
+.notes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.notes-table th,
+.notes-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.notes-table th {
+    background-color: #C1A2D0;
+    color: #fff;
+}
+
+.notes-table td {
+    background-color: #fff;
+}
+
+.button-link,
+.button-delete,
+.button-details {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.button-link {
+    background-color: #007bff; /* Azul */
+}
+
+.button-link:hover {
+    opacity: 0.8;
+}
+
+.button-delete {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.button-delete:hover {
+    opacity: 0.8;
+}
+
+.button-details {
+    background-color: #28a745; /* Verde */
+}
+
+.button-details:hover {
+    opacity: 0.8;
+}
+
+.add-note-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #b788ce;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.add-note-button:hover {
+    background-color: #C1A2D0;
+}
