@@ -1,0 +1,55 @@
+/* EditarNotes.css */
+
+.editar-notes-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.editar-notes-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.editar-notes-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editar-notes-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.editar-notes-form input,
+.editar-notes-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.editar-notes-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.editar-notes-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.editar-notes-form button:hover {
+    background-color: #0056b3;
+}

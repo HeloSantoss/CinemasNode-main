@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Importa o React e os hooks useState e useEffect
 import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
 import { useParams, useNavigate } from 'react-router-dom'; // Importa useParams para obter parâmetros da URL e useNavigate para navegação programática
+import '../css/EditarNote.css'; // Importa o arquivo de estilos
 
 
 function EditarNotes() {
@@ -47,7 +48,7 @@ function EditarNotes() {
 
     return (
         <form onSubmit={atualizarNotes}> {/* Define que a função atualizarLivro será chamada quando o formulário for enviado */}
-            <h1>Editar Livro</h1> {/* Título da página */}
+            <h1>Editar Nota</h1> {/* Título da página */}
            
             {/* Campo para o título do livro */}
             <input

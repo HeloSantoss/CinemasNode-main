@@ -1,0 +1,130 @@
+/* css/ListarNotes.css */
+
+.listar-notes-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.add-note-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.add-note-link:hover {
+    background-color: #0056b3;
+}
+
+.notes-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.note-info {
+    flex: 1;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-link,
+.delete-button,
+.details-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-link {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.details-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.details-button:hover {
+    background-color: #218838;
+}
+
+.details-modal {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.details-modal h2 {
+    margin-top: 0;
+}
+
+.close-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-button:hover {
+    background-color: #0056b3;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}

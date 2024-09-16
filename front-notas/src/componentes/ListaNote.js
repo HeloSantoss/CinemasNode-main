@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Importa o React e os hooks useState e useEffect
 import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
 import { Link } from 'react-router-dom'; // Importa o componente Link do react-router-dom para navegação entre páginas
+import '../css/ListarNotes.css'; // Importa o arquivo de estilos da pasta css
 
 
 function ListarNotes() {
