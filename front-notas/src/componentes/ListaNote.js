@@ -49,7 +49,7 @@ function ListarNotes() {
         <div>
             <h1>Lista de Note</h1>
             {/* Link para a página de adição de um novo livro */}
-            <Link to="/novo">Adicionar Novo Note</Link>
+            <Link to="/novo">Lista de Anotações</Link>
             <ul>
                 {/* Mapeia o array de livros para gerar uma lista de itens */}
                 {note.map(note => (
